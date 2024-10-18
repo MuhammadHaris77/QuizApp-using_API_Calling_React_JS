@@ -31,14 +31,11 @@ function App() {
   const NextQuestion = () => {
     const selectedValue = input.current.find(item => item && item.checked);
     if (selectedValue.value === question[Currentindex].correctAnswer) {
-      console.log("value match")
-      setMarks(marks + 10)
-  
-      setCurrentindex(Currentindex + 1)
-
-      return
+      setMarks(marks + 10) 
+   setCurrentindex(Currentindex + 1)           
+              return
     }
-    console.log(question)
+//    console.log(question)
     if (Currentindex < question.length - 1) {
       setCurrentindex(Currentindex + 1)
 
@@ -73,12 +70,12 @@ function App() {
 
   return (
     <>
-      < div className='h-screen    bg-blue-800		'>
+      < div className='h-lvh bg-blue-800 	'>
 
 
         {
           result ?
-            <div className='container m-auto'>
+            <div className='container m-auto p-4'>
               <h1 className="text-white text-8xl text-center p-4">
                 Quiz  App
               </h1>
@@ -86,8 +83,8 @@ function App() {
                 <h1 className="text-blue-800 text-8xl text-center m-4 p-4">Your Marks: {marks}</h1>
 
               </div>
-            </div> : <div className='container m-auto'>
-              <h1 className="text-white text-8xl text-center p-4">
+            </div> : <div className=' m-auto p-4'>
+              <h1 className="text-white text-8xl text-center px-4">
                 Quiz  App
               </h1>
               <div className='text-end p-4 m-2'>
@@ -96,15 +93,15 @@ function App() {
 
               {question ?
                 <div>
-                  <div className=' bg-white m-4 rounded '>
+                  <div className=' bg-white m-2 rounded '>
                     <h1 className='text-blue-800 p-4 m-2'>
                       <br />
-                      <b>Question {Currentindex + 1} : {question[Currentindex].question.text} </b>
+                      <b>Question {Currentindex +1} : {question[Currentindex].question.text} </b>
                       <br />
                     </h1>
                   </div>
                   {shuffleArray([...question[Currentindex].incorrectAnswers, question[Currentindex].correctAnswer]).map((item, index) => {
-                    return <div key={index} className='bg-white rounded p-4  m-4'>
+                    return <div key={index} className='bg-white rounded p-2  m-2'>
                       <div>
                         <input type="radio" id='' name="question" ref={el => input.current[index] = el} value={item} />
                         <label className='text-blue-800' htmlFor={item}> <b>{item}</b></label>
