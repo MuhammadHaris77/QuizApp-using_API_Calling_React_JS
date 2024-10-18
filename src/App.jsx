@@ -79,8 +79,8 @@ function App() {
               <h1 className="text-white text-8xl text-center p-4">
                 Quiz  App
               </h1>
-              <div className='bg-white rounded p-4  m-4'>
-                <h3 className="text-blue-800 text-8xl text-center m-4 p-4">Your Marks: {marks}</h3>
+              <div className='bg-white rounded p-4 m-4 '>
+                <h3 className="text-blue-800 text-6xl text-center m-4 p-4">Your Marks: {marks}</h3>
 
               </div>
             </div> : <div className=' m-auto p-4'>
